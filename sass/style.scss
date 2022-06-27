@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap");
+
+$mobile-breakpoint: 23.5em;
+$desktop-breakpoint: 90em;
+$color-primary-dark-cyan: hsl(158, 36%, 37%);
+$color-primary-cream: hsl(30, 38%, 92%);
+
+$color-neutral-very-dark-blue: hsl(212, 21%, 14%);
+$color-neutral-dark-grayish-blue: hsl(228, 12%, 48%);
+$color-neutral-white: hsl(0, 0%, 100%);
+
+$font-size-paragraph: 1.4rem;
+
+$font-family-montserrat: "Montserrat", sans-serif;
+$font-family-fraunces: "Fraunces", serif;
+$font-weight-500: 500;
+$font-weight-700: 700;
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html {
+	font-size: 62.5%;
+	@media only screen and (max-width: $mobile-breakpoint) {
+		font-size: 50%;
+	}
+}
+
+body {
+	background-color: $color-primary-cream;
+	width: 100vw;
+	font-family: $font-family-montserrat;
+}
+.container {
+	//width: $desktop-breakpoint;
+	//margin: 15% auto;
+	margin: 10% auto;
+	width: 40%;
+	@media only screen and (max-width: $mobile-breakpoint) {
+    width: 90%;
+		margin: 2rem auto;
+	}
+}
+.card {
+	display: grid;
+	//width: 50%;
+	grid-template-columns: 1fr 1fr;
+	border-radius: 1.2rem;
+	overflow: hidden;
+  box-shadow: 1rem 1rem 2rem rgba($color: #000000, $alpha: .15);
+	@media only screen and (max-width: $mobile-breakpoint) {
+		display: flex;
+		flex-direction: column;
+	}
+	&__image {
+		grid-column: 1 / 2;
+		object-fit: cover;
+		background-position: center;
+		background-size: cover;
+		background-image: url(../images/image-product-desktop.jpg);
+		@media only screen and (max-width: $mobile-breakpoint) {
+			background-image: url(../images/image-product-mobile.jpg);
+			height: 32rem;
+		}
+
+		/* & img {
+      object-fit: cover;
+      background-position: center;
+      background-size: cover;
+      background-image: url(../images/image-product-desktop.jpg);
+      width: 100%;
+      height: auto;
+      //border-bottom-left-radius: 1.2rem;
+      //border-top-left-radius: 1.2rem;
+    } */
+	}
+	&__content {
+		grid-column: 2 / 3;
+		background-color: $color-neutral-white;
+		font-weight: $font-weight-500;
+		padding: 2rem;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 1.8rem;
+		&__type {
+			text-transform: uppercase;
+			letter-spacing: 3px;
+			font-size: $font-size-paragraph;
+			color: $color-neutral-dark-grayish-blue;
+		}
+		&__title {
+			font-size: 3.6rem;
+			font-family: $font-family-fraunces;
+			font-weight: $font-weight-700;
+			color: $color-neutral-very-dark-blue;
+		}
+		&__description {
+			font-size: $font-size-paragraph;
+			color: $color-neutral-dark-grayish-blue;
+		}
+		&__price {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 3.2rem;
+			@media only screen and (max-width: $mobile-breakpoint) {
+				margin-top: 1rem;
+			}
+			&--new {
+				font-size: 3.2rem;
+				font-family: $font-family-fraunces;
+				font-weight: $font-weight-700;
+				color: $color-primary-dark-cyan;
+			}
+			&--old {
+				color: $color-neutral-dark-grayish-blue;
+				text-decoration: line-through;
+				font-size: 1.2rem;
+				@media only screen and (max-width: $mobile-breakpoint) {
+					font-size: 1.4rem;
+				}
+			}
+		}
+		&__button {
+			width: 100%;
+			& button {
+        transition: background-color .3s;
+				width: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				color: $color-neutral-white;
+				outline: none;
+				border: none;
+				background-color: $color-primary-dark-cyan;
+				padding: 1.5rem 1rem;
+				border-radius: 1rem;
+        font-weight: $font-weight-700;
+        &:hover{
+        background-color: $color-neutral-very-dark-blue;
+        cursor: pointer;
+      }
+			}
+			&__icon {
+				//font-size: 3.2rem;
+				stroke: $color-primary-dark-cyan;
+				color: $color-primary-dark-cyan;
+				margin-right: 1rem;
+			}
+      
+		}
+	}
+}
+
+.attribution {
+	font-size: 11px;
+	text-align: center;
+	& a {
+		color: hsl(228, 45%, 44%);
+	}
+}
