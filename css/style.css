@@ -121,6 +121,7 @@ body {
 
 .card__content__description {
   font-size: 1.4rem;
+  line-height: 1.6;
   color: #6c7289;
 }
 

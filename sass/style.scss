@@ -98,6 +98,7 @@ body {
 		}
 		&__description {
 			font-size: $font-size-paragraph;
+      line-height: 1.6;
 			color: $color-neutral-dark-grayish-blue;
 		}
 		&__price {
